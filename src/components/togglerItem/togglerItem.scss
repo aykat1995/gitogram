@@ -1,0 +1,37 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  &.active {
+    .icon {
+      transform: rotate(180deg);
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+}
+  }
+}
+.icon {
+  width: 10px;
+  transform: rotate(0deg) translateY(-15%);
+  -webkit-transform: rotate(0deg) translateY(-15%);
+  -moz-transform: rotate(0deg) translateY(-15%);
+  -ms-transform: rotate(0deg) translateY(-15%);
+  -o-transform: rotate(0deg) translateY(-15%);
+  transition: transform 0.3s;
+  -webkit-transition: transform 0.3s;
+  -moz-transition: transform 0.3s;
+  -ms-transition: transform 0.3s;
+  -o-transition: transform 0.3s;
+}
+
+.toggler-wrapp {
+  text-align: left;
+  margin-top: 15px;
+}
+
+.text {
+  margin-right: 5px;
+}
+  

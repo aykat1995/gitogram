@@ -1,0 +1,16 @@
+.repository {
+  &-avatar {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    margin-bottom: 15px;
+  }
+  &-item {
+    padding: 25px 150px;
+  }
+}
+.wrapper {
+  text-align: left;
+  padding: 25px 50px;
+  background-color: #fff;
+}
