@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # gitogram
 
 ## Project setup
@@ -32,3 +33,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+=======
+# gitogram
+>>>>>>> 09baff1... Initial commit
