@@ -14,7 +14,10 @@
 <script>
   export default {
   inheritAttrs: false,
-  props: ['avatarUrl', 'nickname']
+  props: {
+    avatarUrl: String,
+    nickname: String
+  }
 }
 </script>
 

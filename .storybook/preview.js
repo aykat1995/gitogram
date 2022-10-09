@@ -1,3 +1,4 @@
+import "./main.scss"
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -6,4 +7,18 @@ export const parameters = {
       date: /Date$/,
     },
   },
-}
+  backgrounds: {
+    default: 'light',
+    values: [
+      {
+        name: 'light',
+        value: '#E5E5E5',
+      },
+      {
+        name: 'dark',
+        value: '#101010',
+      },
+    ],
+  },
+};
+
