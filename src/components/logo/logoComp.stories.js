@@ -2,7 +2,7 @@ import logoComp from './logoComp.vue'
 import './logoComp.scss'
 
 export default {
-  title: "logo",
+  title: 'logo',
   components: {
     logoComp
   }
@@ -10,5 +10,5 @@ export default {
 
 export const DefaultView = () => ({
   components: { logoComp },
-  template: `<logoComp />`
-});
+  template: '<logoComp />'
+})

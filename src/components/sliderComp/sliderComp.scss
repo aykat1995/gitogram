@@ -1,0 +1,50 @@
+.component-wrapper {
+  background-color: #101010;
+  padding-top: 40px;
+}
+.slider-wrapp {
+  display: flex;
+  justify-content: center;
+  padding: 120px 0;
+  position: relative;
+}
+.header-wrapp {
+  display: flex;
+  justify-content: space-between;
+}
+.slider-item {
+  margin: 0 30px;
+}
+.icon-wrapp {
+  width: 23px;
+  height: 23px;
+}
+.arrow {
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  border: 2px solid #000;
+  padding: 8px 7px 7px 8px;
+  background-color: #fff;
+}
+.left-arrow {
+  transform: rotate(180deg);
+}
+.arrow-button {
+  position: absolute;
+  top: 48%;
+  &-left {
+    left: 30%;
+  }
+  &-right {
+    right: 30%;
+  }
+  &:hover {
+    .arrow {
+      color: #31AE54;
+    }
+  }
+}
+.icon {
+  color: #fff;
+}

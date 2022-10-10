@@ -1,12 +1,13 @@
 <template>
-  <span class="logo">{{appName}} /</span>
+  <span class="logo" :class="{white: isWhite}">{{appName}} /</span>
 </template>
 
 <script>
   export default {
     data () {
       return {
-        appName: 'Gitogram'
+        appName: 'Gitogram',
+        isWhite: false
       }
     }
 }

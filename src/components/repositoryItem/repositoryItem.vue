@@ -6,7 +6,7 @@
     <div class="wrapper">
       <slot></slot>
     </div>
-    <togglerItem @onToggle="onTogglerClick" />
+    <div class="toggler-wrapp"><togglerItem @onToggle="onTogglerClick" /></div>
     <messageList v-if="isShowMessage" />
     <dataComp />
   </div>

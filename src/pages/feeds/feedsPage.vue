@@ -20,13 +20,16 @@
   <div class="repository-list">
     <div class="container">
       <div class="repository-list__container">
-        <repositoryItem v-for="n in 5" :key="n">
+        <repositoryItem v-for="n in 2" :key="n">
           <div class="wrappper">
             <repositoryDescription :reponame="'Vue.js'" :repodescription="'JavaScript framework for building interactive web applications'" :likesCount="4" :followers="7" />
           </div>
         </repositoryItem>
       </div>
     </div>
+  </div>
+  <div class="slider-wrapper">
+    <sliderComp />
   </div>
 </template>
 
@@ -38,6 +41,7 @@ import { profileTools } from '../../components/profileTools'
 import repositoryItem from '@/components/repositoryItem/repositoryItem.vue'
 import repositoryDescription from '@/components/repositoryDescription/repositoryDescription.vue'
 import stories from './data.json'
+import sliderComp from '../../components/sliderComp/sliderComp.vue'
 
 export default {
   name: 'feedsPage',
@@ -47,7 +51,8 @@ export default {
     storyUserItem,
     profileTools,
     repositoryItem,
-    repositoryDescription
+    repositoryDescription,
+    sliderComp
 },
   data () {
     return {

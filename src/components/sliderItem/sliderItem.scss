@@ -1,0 +1,61 @@
+.wrapp {
+  display: block;
+  width: 375px;
+  height: 667px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  background-color: #fff;
+  position: relative;
+}
+.fixed-wrapper {
+  padding: 8px 8px 0;
+  border-bottom: 1px solid #AFAFAF;
+}
+.slider-avatar {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  width: 32px;
+  margin: 13px 0;
+  margin-left: 5px;
+  p {
+    font-size: 14px;
+  }
+}
+.slider-content {
+  padding: 5px 27px 5px 18px;
+  overflow: auto;
+  height: 498px;
+  color:#404040;
+  font-size: 14px;
+}
+.button-wrapp {
+  padding: 32px 52px;
+  border-top: 1px solid #AFAFAF;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+}
+
+//Стилизация скролла
+
+::-webkit-scrollbar {
+  width: 5px; /* ширина для вертикального скролла */
+  height: 8px; /* высота для горизонтального скролла */
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #AFAFAF;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}

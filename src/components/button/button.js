@@ -1,1 +1,1 @@
-export { default as buttonComp } from './buttonComp.vue' 
+export { default as buttonComp } from './buttonComp.vue'

@@ -4,7 +4,7 @@ export default {
   title: 'button',
   components: { buttonComp },
   argTypes: {
-    hoverText: {
+    text: {
       control: { type: 'text' }
     }
   }
@@ -18,10 +18,10 @@ const template = (args) => ({
   template: `
     <buttonComp v-bind="args">Following</buttonComp>
   `
-});
+})
 
 export const Default = template.bind({})
 
 Default.args = {
-  text: "Unfollow"
+  text: 'Unfollow'
 }
