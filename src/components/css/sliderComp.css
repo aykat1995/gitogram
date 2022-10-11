@@ -1,0 +1,65 @@
+.component-wrapper {
+  background-color: #101010;
+  padding-top: 40px;
+}
+
+.slider-wrapp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 120px 0;
+  position: relative;
+}
+
+.header-wrapp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.slider-item {
+  margin: 0 30px;
+}
+
+.icon-wrapp {
+  width: 23px;
+  height: 23px;
+}
+
+.arrow {
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  border: 2px solid #000;
+  padding: 8px 7px 7px 8px;
+  background-color: #fff;
+}
+
+.left-arrow {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.arrow-button {
+  position: absolute;
+  top: 48%;
+}
+.arrow-button-left {
+  left: 30%;
+}
+.arrow-button-right {
+  right: 30%;
+}
+.arrow-button:hover .arrow {
+  color: #31AE54;
+}
+
+.icon {
+  color: #fff;
+}/*# sourceMappingURL=sliderComp.css.map */

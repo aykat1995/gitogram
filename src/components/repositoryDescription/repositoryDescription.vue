@@ -8,7 +8,12 @@
 import repositoryInfo from '../repositoryInfo/repositoryInfo.vue'
 export default {
   name: 'repositoryDescription',
-  props: ['reponame', 'repodescription', 'likesCount', 'followers'],
+  props: {
+    reponame: String,
+    repodescription: String,
+    likesCount: Number,
+    followers: Number
+  },
   components: {
     repositoryInfo
   }

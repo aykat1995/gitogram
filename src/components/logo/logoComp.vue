@@ -1,14 +1,16 @@
 <template>
-  <span class="logo" :class="{white: isWhite}">{{appName}} /</span>
+  <span :class='["logo", {white: isWhite}]'>{{appName}} /</span>
 </template>
 
 <script>
   export default {
     data () {
       return {
-        appName: 'Gitogram',
-        isWhite: false
+        appName: 'Gitogram'
       }
+    },
+    props: {
+      isWhite: Boolean
     }
 }
 </script>

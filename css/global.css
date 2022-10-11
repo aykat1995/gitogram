@@ -1,0 +1,53 @@
+body, html {
+  height: 100%;
+}
+
+body {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #262626;
+  font-family: "Inter", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+  border: 1px solid #F1F1F1;
+  -webkit-box-shadow: 0px 4px 40px 0 #F1F1F1;
+          box-shadow: 0px 4px 40px 0 #F1F1F1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.greyIcon {
+  color: #586069;
+}/*# sourceMappingURL=global.css.map */

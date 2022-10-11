@@ -1,0 +1,21 @@
+.repository-avatar {
+  width: 44px;
+  height: 44px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 15px;
+}
+.repository-item {
+  padding: 25px 150px;
+}
+
+.wrapper {
+  text-align: left;
+  padding: 25px 50px;
+  background-color: #fff;
+}
+
+.toggler-wrapper {
+  margin-top: 15px;
+}/*# sourceMappingURL=repositoryItem.css.map */

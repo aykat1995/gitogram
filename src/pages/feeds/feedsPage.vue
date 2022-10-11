@@ -20,9 +20,9 @@
   <div class="repository-list">
     <div class="container">
       <div class="repository-list__container">
-        <repositoryItem v-for="n in 2" :key="n">
+        <repositoryItem v-for="item in items" :key="item.id" :nickname="item.owner.login">
           <div class="wrappper">
-            <repositoryDescription :reponame="'Vue.js'" :repodescription="'JavaScript framework for building interactive web applications'" :likesCount="4" :followers="7" />
+            <repositoryDescription :reponame="item.name" :repodescription="item.description" :likesCount="item.stargazers_count" :followers="item.forks" />
           </div>
         </repositoryItem>
       </div>
@@ -42,6 +42,7 @@ import repositoryItem from '@/components/repositoryItem/repositoryItem.vue'
 import repositoryDescription from '@/components/repositoryDescription/repositoryDescription.vue'
 import stories from './data.json'
 import sliderComp from '../../components/sliderComp/sliderComp.vue'
+import * as api from '../../api/main.js'
 
 export default {
   name: 'feedsPage',
@@ -56,7 +57,17 @@ export default {
 },
   data () {
     return {
-      stories
+      stories,
+      items: []
+    }
+  },
+  methods: {},
+  async created () {
+    try {
+      const { data } = await api.trendings.getTrendings()
+      this.items = data.items
+    } catch (error) {
+    console.log(error)
     }
   }
 }

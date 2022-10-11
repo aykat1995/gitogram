@@ -3,7 +3,7 @@
     <div class="fixed-wrapper">
       <progress-bar />
       <div class="slider-avatar">
-        <profileAvatar :avatarUrl="'https://png.pngtree.com/element_origin_min_pic/16/09/11/1157d4c8bbe76b3.jpg'" :nickname="'Nickname'"/>
+        <profileAvatar :avatarUrl="'https://w7.pngwing.com/pngs/244/76/png-transparent-avatar-male-man-person-profile-user-website-website-internet-icon.png'" :nickname="'Nickname'"/>
       </div>
     </div>
     <div class="slider-content">

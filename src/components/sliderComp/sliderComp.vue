@@ -3,7 +3,7 @@
     <div class="container">
       <div class="header-wrapp">
         <div class="logo-wrapp">
-          <logoComp :isWhite="true" />
+          <logoComp isWhite />
         </div>
         <button class="icon">
           <div class="icon-wrapp">
