@@ -3,10 +3,18 @@
     width: 60px;
     height: 60px;
     border-radius: 100%;
+    transition: all 0.1s;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     -ms-border-radius: 100%;
     -o-border-radius: 100%;
     border: 2px solid #A6328D;
-}  
+    -webkit-transition: all 0.1s;
+    -moz-transition: all 0.1s;
+    -ms-transition: all 0.1s;
+    -o-transition: all 0.1s;
+    &:hover {
+      border-color: transparent;
+    }
+  }  
 }

@@ -5,4 +5,11 @@
 .stories {
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
+  &-item {
+    margin-right: 40px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 }

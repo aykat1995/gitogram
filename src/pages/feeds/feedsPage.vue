@@ -9,8 +9,8 @@
       </template>
       <template #content>
         <ul class="stories">
-          <li class="stories-item" v-for="story in stories" :key="story.key">
-            <story-user-item :avatar="story.avatar" :username="story.username" @onPress="handlePress(story.id)">
+          <li class="stories-item" v-for="(trending, ndx) in trendings" :key="trending.id">
+            <story-user-item :avatar="trending.owner.avatar_url" :username="trending.owner.login" @onPress="$router.push({ name: 'stories', params: { initialSlide: trending.id, ndx:ndx }})">
             </story-user-item>
           </li>
         </ul>
@@ -20,17 +20,15 @@
   <div class="repository-list">
     <div class="container">
       <div class="repository-list__container">
-        <repositoryItem v-for="item in items" :key="item.id" :nickname="item.owner.login">
+        <repositoryItem v-for="trending in this.trendings" :key="trending.id" :nickname="trending.owner.login">
           <div class="wrappper">
-            <repositoryDescription :reponame="item.name" :repodescription="item.description" :likesCount="item.stargazers_count" :followers="item.forks" />
+            <repositoryDescription :reponame="trending.name" :repodescription="trending.description" :likesCount="trending.stargazers_count" :followers="trending.forks" />
           </div>
         </repositoryItem>
       </div>
     </div>
   </div>
-  <div class="slider-wrapper">
-    <sliderComp />
-  </div>
+  <sliderComp :initialSlide="Number($route.params.ndx)" @unpress="handleUnpress"/>
 </template>
 
 <script>
@@ -41,8 +39,7 @@ import { profileTools } from '../../components/profileTools'
 import repositoryItem from '@/components/repositoryItem/repositoryItem.vue'
 import repositoryDescription from '@/components/repositoryDescription/repositoryDescription.vue'
 import stories from './data.json'
-import sliderComp from '../../components/sliderComp/sliderComp.vue'
-import * as api from '../../api/main.js'
+import { mapState, mapActions } from 'vuex'
 
 export default {
   name: 'feedsPage',
@@ -52,23 +49,38 @@ export default {
     storyUserItem,
     profileTools,
     repositoryItem,
-    repositoryDescription,
-    sliderComp
+    repositoryDescription
 },
   data () {
     return {
       stories,
-      items: []
+      items: [],
+      storiesIsActive: false,
+      currentId: 0
     }
   },
-  methods: {},
+  computed: {
+    ...mapState({
+      trendings: state => state.trendings.trendings.data
+    })
+  },
+  methods: {
+    handlePress () {
+      this.storiesIsActive = true
+    },
+    handleUnpress () {
+      this.storiesIsActive = false
+      console.log('UNPRESS IS DONE')
+    },
+    activateStories (id) {
+      this.currentId = id
+    },
+    ...mapActions({
+      fetchTrendings: 'trendings/fetchTrendings'
+    })
+  },
   async created () {
-    try {
-      const { data } = await api.trendings.getTrendings()
-      this.items = data.items
-    } catch (error) {
-    console.log(error)
-    }
+    await this.fetchTrendings()
   }
 }
 </script>

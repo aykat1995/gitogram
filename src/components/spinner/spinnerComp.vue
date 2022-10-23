@@ -1,0 +1,33 @@
+<template>
+  <div class="spinner-wrapp">
+    <div class="spinner"></div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'spinnerComp'
+}
+</script>
+
+<style scoped lang="scss">
+.spinner {
+    height: 50px;
+    width: 50px;
+    border-left: 3px solid #31AE54;
+    border-bottom: 3px solid #31AE54;
+    border-right: 3px solid #31AE54;
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    animation: spinner 1s linear infinite;
+}
+@keyframes spinner {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+</style>

@@ -1,14 +1,14 @@
 <template>
-  <feedsPage />
+  <router-view></router-view>
 </template>
 
 <script>
-import { feedsPage } from './pages/feeds'
+// import { feedsPage } from './pages/feeds'
 
 export default {
   name: 'App',
   components: {
-    feedsPage
+    // feedsPage
   }
 }
 </script>

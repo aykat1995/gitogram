@@ -1,5 +1,5 @@
 <template>
-  <div :class={active} class="progress">
+  <div :class="{active}" class="progress">
     <div ref="indicator" class="indicator"></div>
   </div>
 </template>
@@ -7,28 +7,15 @@
 <script>
   export default {
     name: 'progressBar',
-    data () {
-      return {
-        active: false
-      }
+    props: {
+      active: Boolean
     },
     emits: ['onFinish'],
-    methods: {
-      emitOnFinish () {
-        this.$emit('onFinish')
-      }
-    },
     mounted () {
-      // this.$nextTick(() => {
-      //   this.active = true
-      // })
-      setTimeout(() => {
-        this.active = true
-      }, 0)
-      this.$refs.indicator.addEventListener('transitionend', this.emitOnFinish)
+      this.$refs.indicator.addEventListener('transitionend', this.$emit('onFinish'))
     },
     beforeUnmount () {
-      this.$refs.indicator.remove.addEventListener('transitionend', this.emitOnFinish)
+      this.$refs.indicator.remove.addEventListener('transitionend', this.$emit('onFinish'))
     }
   }
 </script>
