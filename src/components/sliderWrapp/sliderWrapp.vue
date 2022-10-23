@@ -11,6 +11,7 @@
         :btnsShown="activeBtns"
         @onNextSlide="handleSlide(ndx + 1)"
         @onPrevSlide="handleSlide(ndx - 1)"
+        @onProgressFinish="handleSlide(ndx + 1)"
         />
       </li>
     </ul>
@@ -41,7 +42,7 @@ export default {
   },
   computed: {
     ...mapState({
-      trendings: state => state.trendings.trendings.data
+      trendings: state => state.trendings.data
     }),
     activeBtns () {
       if (this.slideNdx === 0) return ['next']
@@ -96,6 +97,7 @@ export default {
       // console.log('trendings: ' + JSON.stringify(this.trendings))
       console.log('INITIAL_SLIDE: ' + this.initialSlide)
       const ndx = this.trendings.findIndex(item => item.id === this.initialSlide)
+      console.log('NDX IS: ' + ndx)
       await this.handleSlide(ndx)
     }
     await this.fetchTrendings()

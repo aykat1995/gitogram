@@ -1,11 +1,6 @@
 <template>
   <div class="block"></div>
-    <div class="paragraph">
-      <div class="paragraph-item"></div>
-      <div class="paragraph-item"></div>
-      <div class="paragraph-item"></div>
-    </div>
-    <div class="paragraph">
+    <div class="paragraph" v-for="p in paragraphs" :key="p">
       <div class="paragraph-item"></div>
       <div class="paragraph-item"></div>
       <div class="paragraph-item"></div>
@@ -16,7 +11,10 @@
 export default {
   name: 'placeHolder',
   props: {
-    paragraphs: Number
+    paragraphs: {
+      type: Number,
+      default: 1
+    }
   }
 }
 </script>

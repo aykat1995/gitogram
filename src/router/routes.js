@@ -7,12 +7,7 @@ export default [{
   name: 'home'
 },
 {
-  path: '/stories',
+  path: '/stories/:initialSlide',
   component: sliderComp,
-  name: 'stories',
-  children: {
-    path: '/stories/:initialSlide',
-    component: sliderComp,
-    name: 'storiesInitialSlide'
-  }
+  name: 'stories'
 }]

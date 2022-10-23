@@ -3,30 +3,28 @@ import * as api from '../../api/main.js'
 export default {
   namespaced: true,
   state: {
-    trendings: {
       data: [],
       loading: false,
       error: '',
       content: []
-    }
   },
   getters: {
     getRepoById: (state) => (id) => {
-    return state.trendings.data.find((item) => item.id === id)
+    return state.data.find((item) => item.id === id)
     }
   },
   mutations: {
     setTrendingsData (state, payload) {
-      state.trendings.data = payload
+      state.data = payload
     },
     setTrendingsLoading (state, payload) {
-      state.trendings.loading = payload
+      state.loading = payload
     },
     setTrendingsError (state, payload) {
-      state.trendings.error = payload
+      state.error = payload
     },
     setReadme (state, payload) {
-      state.trendings.data = state.trendings.data.map(repo => {
+      state.data = state.data.map(repo => {
         if (payload.id === repo.id) {
           repo.readme = payload.content
         }

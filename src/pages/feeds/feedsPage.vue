@@ -60,7 +60,7 @@ export default {
   },
   computed: {
     ...mapState({
-      trendings: state => state.trendings.trendings.data
+      trendings: state => state.trendings.data
     })
   },
   methods: {
