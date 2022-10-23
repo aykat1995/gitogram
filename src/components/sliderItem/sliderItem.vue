@@ -1,7 +1,7 @@
 <template>
   <div class="wrapp" :class="{active}">
     <div class="fixed-wrapper">
-      <progressBar active/>
+      <progressBar :active="active" @onFinish="$emit('onProgressFinish')"/>
       <div class="slider-avatar">
         <profileAvatar :avatarUrl="data.avatarURL" :nickname="data.nickname"/>
       </div>

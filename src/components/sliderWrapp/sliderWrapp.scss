@@ -1,0 +1,20 @@
+.slider {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  margin-left: -188px;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  &-wrapp {
+    padding-top: 70px;
+    height: 660px;
+    position: relative;
+  }
+  &-item {
+    margin: 0 30px;
+  }
+}

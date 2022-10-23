@@ -9,8 +9,8 @@
       </template>
       <template #content>
         <ul class="stories">
-          <li class="stories-item" v-for="(trending, ndx) in trendings" :key="trending.id">
-            <story-user-item :avatar="trending.owner.avatar_url" :username="trending.owner.login" @onPress="$router.push({ name: 'stories', params: { initialSlide: trending.id, ndx:ndx }})">
+          <li class="stories-item" v-for="(trending) in trendings" :key="trending.id">
+            <story-user-item :avatar="trending.owner.avatar_url" :username="trending.owner.login" @onPress="$router.push({ name: 'stories', params: { initialSlide: trending.id}})">
             </story-user-item>
           </li>
         </ul>
@@ -28,7 +28,6 @@
       </div>
     </div>
   </div>
-  <sliderComp :initialSlide="Number($route.params.ndx)" @unpress="handleUnpress"/>
 </template>
 
 <script>
@@ -65,16 +64,6 @@ export default {
     })
   },
   methods: {
-    handlePress () {
-      this.storiesIsActive = true
-    },
-    handleUnpress () {
-      this.storiesIsActive = false
-      console.log('UNPRESS IS DONE')
-    },
-    activateStories (id) {
-      this.currentId = id
-    },
     ...mapActions({
       fetchTrendings: 'trendings/fetchTrendings'
     })
