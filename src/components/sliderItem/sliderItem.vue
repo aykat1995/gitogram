@@ -16,7 +16,14 @@
       </div>
     </div>
     <div class="button-wrapp">
-      <button-comp/>
+      <button-comp
+        :size="size_m"
+        :theme="data.following.status ? 'theme_grey' : 'theme_green'"
+        :hoverText="hoverText"
+        :loading='data.following.loading'
+        @click="$emit(data.following.status ? 'unFollow' : 'onFollow', data.id)">
+        {{data.following.status ? 'Unfollow' : 'follow'}}
+      </button-comp>
     </div>
     <div v-if="active" class="arrow-wrapp">
       <button v-if="btnsShown.includes('prev')" @click="$emit('onPrevSlide')" class="arrow-button arrow-button-left">
@@ -51,9 +58,20 @@ export default {
     placeHolder,
     progressBar
   },
+  data () {
+    return {
+      hoverText: 'Unfollow',
+      size_s: 'size_s',
+      size_m: 'size_m',
+      theme_grey: 'theme_grey',
+      theme_green: 'theme_green'
+    }
+  },
+  emits: ['onFollow', 'onNextSlide', 'onPrevSlide', 'onProgressFinish'],
   props: {
     active: Boolean,
     loading: Boolean,
+    status: Boolean,
     content: String,
     btnsShown: {
       type: Array,
@@ -74,6 +92,11 @@ export default {
   actions: {
 
   }
+  // computed: {
+  //   buttonTheme () {
+  //     return this.following.status === true ? 'theme_grey' : 'theme_green'
+  //   }
+  // }
 }
 </script>
 

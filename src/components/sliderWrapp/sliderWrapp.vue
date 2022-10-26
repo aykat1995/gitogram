@@ -12,6 +12,7 @@
         @onNextSlide="handleSlide(ndx + 1)"
         @onPrevSlide="handleSlide(ndx - 1)"
         @onProgressFinish="handleSlide(ndx + 1)"
+        @onFollow="starRepo"
         />
       </li>
     </ul>
@@ -53,14 +54,16 @@ export default {
   methods: {
     ...mapActions({
       fetchTrendings: 'trendings/fetchTrendings',
-      fetchReadme: 'trendings/fetchReadme'
+      fetchReadme: 'trendings/fetchReadme',
+      starRepo: 'trendings/starRepo'
     }),
     getStoryData (obj) {
       return {
         id: obj.id,
         avatarURL: obj.owner?.avatar_url,
         nickname: obj.owner?.login,
-        content: obj.readme
+        content: obj.readme,
+        following: obj.following
       }
     },
     async fetchReadmeForActiveSlide () {

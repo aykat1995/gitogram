@@ -23,7 +23,7 @@ export default {
     if (this.active) {
         this.style = {
           width: '100%',
-          transition: 'all ' + 5 + 's'
+          transition: 'all ' + 100 + 's'
         }
     }
     this.$refs.indicator.addEventListener('transitionend', this.emitOnFinish)
@@ -37,7 +37,7 @@ export default {
         setTimeout(() => {
           this.style = {
             width: '100%',
-            transition: 'all ' + 5 + 's'
+            transition: 'all ' + 100 + 's'
           }
         }, 0)
       } else {
