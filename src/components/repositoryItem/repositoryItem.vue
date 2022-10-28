@@ -49,7 +49,9 @@ export default {
   methods: {
     onTogglerClick (isShow) {
       this.isShowMessage = isShow
-      this.$emit('loadContent')
+      if (isShow && this.issues.length === 0) {
+        this.$emit('loadContent')
+      }
     }
   }
 }
