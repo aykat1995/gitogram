@@ -11,7 +11,7 @@
       </router-link>
     </div>
     <button class="icon">
-      <iconComp :click="logout" name="exitIcon" />
+      <iconComp @click="logout" name="exitIcon" />
     </button>
   </div>
 </template>
