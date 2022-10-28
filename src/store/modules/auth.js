@@ -17,6 +17,7 @@ export default {
       return data.token
     },
     async logout () {
+      console.log('LOGOUT')
       localStorage.removeItem('token')
       window.location.reload()
     }

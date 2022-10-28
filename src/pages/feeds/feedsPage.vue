@@ -85,7 +85,6 @@ export default {
     }),
     loadIssues ({ id, owner, repo }) {
       this.fetchIssuesForRepo({ id, owner, repo })
-      console.log('fetch Issues id, owner, repo :' + id + ' ' + owner + ' ' + repo)
     }
   },
   async created () {

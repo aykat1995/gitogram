@@ -14,8 +14,6 @@ export default {
     },
     SET_ISSUES_TO_REPO: (state, payload) => {
       state.data = state.data.map((repo) => {
-        console.log('repo.id=' + repo.id)
-        console.log('payload.id=' + payload.id)
         if (payload.id === repo.id) {
         repo.issues = payload.issues
         }
