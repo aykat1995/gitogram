@@ -16,7 +16,7 @@ export default {
       const { data } = await api.auth.getAccessTokenByPersonalCode(code)
       return data.token
     },
-    logout () {
+    async logout () {
       localStorage.removeItem('token')
       window.location.reload()
     }

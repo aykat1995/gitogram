@@ -20,11 +20,22 @@
   <div class="repository-list">
     <div class="container">
       <div class="repository-list__container">
-        <repositoryItem v-for="trending in this.trendings" :key="trending.id" :nickname="trending.owner.login">
-          <div class="wrappper">
-            <repositoryDescription :reponame="trending.name" :repodescription="trending.description" :likesCount="trending.stargazers_count" :followers="trending.forks" />
-          </div>
-        </repositoryItem>
+        <ul class="repository__list">
+          <li class="repository__item"
+            v-for="{ id, owner, name, description, stargazers_count, forks_count, issues } in starred"
+            :key="id">
+            <repositoryItem
+            :avatarUrl="owner.avatar_url"
+            :nickname="owner.login"
+            :issues="issues?.data"
+            :loading="issues?.loading"
+            @loadContent="loadIssues({ id, owner: owner.login, repo: name })">
+              <div class="wrappper">
+                <repositoryDescription :reponame="name" :repodescription="description" :likesCount="stargazers_count" :followers="forks_count" />
+              </div>
+            </repositoryItem>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -38,7 +49,8 @@ import { profileTools } from '../../components/profileTools'
 import repositoryItem from '@/components/repositoryItem/repositoryItem.vue'
 import repositoryDescription from '@/components/repositoryDescription/repositoryDescription.vue'
 import stories from './data.json'
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapActions, mapGetters } from 'vuex'
+import * as api from '../../api/main.js'
 
 export default {
   name: 'feedsPage',
@@ -60,16 +72,34 @@ export default {
   },
   computed: {
     ...mapState({
-      trendings: state => state.trendings.data
-    })
+      trendings: state => state.trendings.data,
+      starred: state => state.starred.data
+    }),
+    ...mapGetters(['getUstarredOnly'])
   },
   methods: {
     ...mapActions({
-      fetchTrendings: 'trendings/fetchTrendings'
-    })
+      fetchTrendings: 'trendings/fetchTrendings',
+      fetchStarred: 'starred/fetchStarred',
+      fetchIssuesForRepo: 'starred/fetchIssuesForRepo'
+    }),
+    loadIssues ({ id, owner, repo }) {
+      this.fetchIssuesForRepo({ id, owner, repo })
+      console.log('fetch Issues id, owner, repo :' + id + ' ' + owner + ' ' + repo)
+    }
   },
   async created () {
-    await this.fetchTrendings()
+    try {
+      const { data } = await api.trendings.getTrendings()
+      this.items = data.items
+    } catch (error) {
+      console.log(error)
+    }
+  },
+  mounted () {
+    this.fetchTrendings()
+    this.fetchStarred({ limit: 10 })
+    console.log('ISSUES: ' + JSON.stringify(this.starred.issues))
   }
 }
 </script>

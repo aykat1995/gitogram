@@ -17,11 +17,9 @@
     </div>
     <div class="button-wrapp">
       <button-comp
-        :size="size_m"
         :theme="data.following.status ? 'theme_grey' : 'theme_green'"
-        :hoverText="hoverText"
         :loading='data.following.loading'
-        @click="$emit(data.following.status ? 'unFollow' : 'onFollow', data.id)">
+        @click="$emit(data.following.status ? 'onUnFollow' : 'onFollow', data.id)">
         {{data.following.status ? 'Unfollow' : 'follow'}}
       </button-comp>
     </div>

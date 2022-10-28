@@ -108,7 +108,44 @@ export default {
         commit('setFollowing', {
           id,
           data: {
+            loading: false
+          }
+        })
+        console.log('FINALLY')
+      }
+    },
+    async unStarRepo ({ commit, getters }, id) {
+      const { name: repo, owner } = getters.getRepoById(id)
+
+      commit('setFollowing', {
+        id,
+        data: {
+          status: true,
+          loading: true,
+          error: ''
+        }
+      })
+      try {
+        await api.starred.unStarRepoApi({ owner: owner.login, repo })
+        commit('setFollowing', {
+          id,
+          data: {
             status: false
+          }
+        })
+      } catch (error) {
+        commit('setFollowing', {
+          id,
+          data: {
+            status: true,
+            error: 'Error has happened'
+          }
+        })
+      } finally {
+        commit('setFollowing', {
+          id,
+          data: {
+            loading: false
           }
         })
       }

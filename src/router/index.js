@@ -9,10 +9,6 @@ const router = createRouter({
 
 router.beforeEach(async (to, from, next) => {
   const authRoute = to.name === 'auth'
-  if (authRoute) {
-    next()
-    return
-  }
 
   try {
     await api.user.getUserData()

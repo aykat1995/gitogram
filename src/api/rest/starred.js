@@ -11,11 +11,11 @@ export const getStarredReposApi = ({ limit }) => {
 }
 
 export const starRepoApi = ({ repo, owner }) => makeRequest({
-  url: `/user/starred?${owner}/${repo}`,
+  url: `/user/starred/${owner}/${repo}`,
   method: 'put'
 })
 
 export const unStarRepoApi = ({ repo, owner }) => makeRequest({
-  url: `/user/starred?${owner}/${repo}`,
+  url: `/user/starred/${owner}/${repo}`,
   method: 'delete'
 })

@@ -12,7 +12,8 @@
         @onNextSlide="handleSlide(ndx + 1)"
         @onPrevSlide="handleSlide(ndx - 1)"
         @onProgressFinish="handleSlide(ndx + 1)"
-        @onFollow="starRepo"
+        @onFollow="starRepo(trending.id)"
+        @onUnFollow="unStarRepo(trending.id)"
         />
       </li>
     </ul>
@@ -43,7 +44,8 @@ export default {
   },
   computed: {
     ...mapState({
-      trendings: state => state.trendings.data
+      trendings: state => state.trendings.data,
+      starred: (state) => state.starred.data
     }),
     activeBtns () {
       if (this.slideNdx === 0) return ['next']
@@ -55,7 +57,8 @@ export default {
     ...mapActions({
       fetchTrendings: 'trendings/fetchTrendings',
       fetchReadme: 'trendings/fetchReadme',
-      starRepo: 'trendings/starRepo'
+      starRepo: 'trendings/starRepo',
+      unStarRepo: 'trendings/unStarRepo'
     }),
     getStoryData (obj) {
       return {

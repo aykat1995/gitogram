@@ -7,7 +7,7 @@
     <div class="spinner" v-if="loading">
       <spinnerComp white/>
     </div>
-    <span class="button-text">
+    <span v-if="!loading" class="button-text">
       <slot></slot>
     </span>
   </button>

@@ -1,6 +1,10 @@
 .logo {
   font-size: 28px;
   font-weight: 700;
+  &-link {
+    text-decoration: none;
+    color: #292929;
+  }
   &.white {
     color: #fff
   }

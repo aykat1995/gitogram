@@ -12,13 +12,14 @@ export default {
         return repo
       })
     },
-    SET_ISSUES_TO_REPO: (state, { id, issues }) => {
+    SET_ISSUES_TO_REPO: (state, payload) => {
       state.data = state.data.map((repo) => {
-        const editedRepo = repo
-        if (repo.id === id) {
-          editedRepo.issues = issues
+        console.log('repo.id=' + repo.id)
+        console.log('payload.id=' + payload.id)
+        if (payload.id === repo.id) {
+        repo.issues = payload.issues
         }
-        return editedRepo
+        return repo
       })
     },
     SET_FOLLOWING: (state, payload) => {
@@ -55,7 +56,6 @@ export default {
 
       try {
         const { data } = await api.issues.getIssues({ owner, repo })
-
         commit('SET_ISSUES_TO_REPO', {
           id,
           issues: {

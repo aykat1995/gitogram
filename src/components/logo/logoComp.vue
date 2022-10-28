@@ -1,5 +1,7 @@
 <template>
-  <span :class='["logo", {white: isWhite}]'>{{appName}} /</span>
+  <router-link class="logo-link" :to="{name: 'home'}">
+    <span :class='["logo", {white: isWhite}]'>{{appName}} /</span>
+  </router-link>
 </template>
 
 <script>

@@ -1,0 +1,33 @@
+.repos {
+  padding-right: 126px;
+}
+.repos__header {
+  margin-bottom: 36px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+
+  .title {
+    font-size: 26px;
+  }
+
+  .count {
+    font-size: 18px;
+    color: #9E9E9E;
+  }
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.repo__item {
+  margin-bottom: 20px;
+  border: 1px solid #F1F1F1;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.07);
+  padding: 0 35px 35px
+}
