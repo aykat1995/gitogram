@@ -51,6 +51,7 @@ export default {
       this.isShowMessage = isShow
       if (isShow && this.issues.length === 0) {
         this.$emit('loadContent')
+        console.log('Emit is happend')
       }
     }
   }
