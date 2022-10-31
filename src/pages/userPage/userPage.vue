@@ -2,7 +2,7 @@
   <top-line>
       <template #headline>
         <div class="headline">
-          <router-link :to="{name: 'home'}">
+          <router-link class="logo" :to="{name: 'home'}">
             <logo-comp />
           </router-link>
           <profile-tools />
@@ -39,6 +39,8 @@
   </div>
 </template>
 
+<!-- Using Composition API -->
+
 <script>
 // import { mapActions, mapState, mapGetters } from 'vuex'
 import { topLine } from '../../components/topline'
@@ -59,19 +61,10 @@ export default {
   },
   setup () {
     const { dispatch, state } = useStore()
-    //
     dispatch('starred/fetchStarred')
-    // user: (state) => state.user.data
-    // //const user = computed(() => state.user.data)
-    // followingQty: 'starred/getFollowingQty'
-    // const getFollowingQty = computed(() => getters.starred.getFollowingQty)
     return {
       user: computed(() => state.user.data),
-      // starred: computed(() => state.starred.data),
-      // followingQty: computed(() => getters.starred.getFollowingQty)
       followingQty: computed(() => state.starred.data.length)
-      // user,
-      // getFollowingQty
     }
   },
   data () {
@@ -79,27 +72,9 @@ export default {
       items: [],
       avatar_s: 'avatar_s',
       avatar_m: 'avatar_m',
-      avatar_l: 'avatar_l',
-      logo_white: 'logo_white',
-      logo_black: 'logo_black'
+      avatar_l: 'avatar_l'
     }
   }
-  // computed: {
-  //   ...mapState({
-  //     user: (state) => state.user.data
-  //   }),
-  //   ...mapGetters({
-  //     followingQty: 'starred/getFollowingQty'
-  //   })
-  // },
-  // methods: {
-  //   ...mapActions({
-  //     fetchStarred: 'starred/fetchStarred'
-  //   })
-  // },
-  // created () {
-  //   this.fetchStarred()
-  // }
 }
 </script>
 

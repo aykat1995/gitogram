@@ -6,7 +6,9 @@
     <div class="wrapper">
       <slot></slot>
     </div>
-    <div class="toggler-wrapp"><togglerItem @onToggle="onTogglerClick" /></div>
+    <div class="toggler-wrapp">
+      <togglerItem @onToggle="onTogglerClick" />
+    </div>
     <div class="content-loader" v-if="loading">
       <preloaderComp></preloaderComp>
     </div>

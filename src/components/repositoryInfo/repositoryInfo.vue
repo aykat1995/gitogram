@@ -4,7 +4,7 @@
       <button class="info-button">
         <div class="info-button-wrapp">
           <div class="icon-wrapp">
-            <iconComp name="starIcon" />
+            <iconComp class="icon" name="starIcon" />
           </div>
           <div class="span-wrapp">
             <span>Star</span>
@@ -19,7 +19,7 @@
       <button class="info-button">
         <div class="info-button-wrapp">
           <div class="icon-wrapp">
-            <iconComp name="forkIcon" />
+            <iconComp class="icon" name="forkIcon" />
           </div>
           <div class="span-wrapp">
             <span>Fork</span>

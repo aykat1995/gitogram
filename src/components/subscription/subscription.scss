@@ -5,5 +5,15 @@
 }
 .user {
   height: 42px;
+  width: 42px;
   display: flex;
+  position: relative;
+}
+.type {
+  position: absolute;
+  bottom: -8px;
+  left: 135%;
+  font-size: 12px;
+  color: #9E9E9E;
+  text-transform: lowercase;
 }

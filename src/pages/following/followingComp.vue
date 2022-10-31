@@ -9,7 +9,6 @@
         <div class="title">Following</div>
         <div class="count">{{starred.length}}</div>
       </div>
-<!--          <pre>{{starred}}</pre>-->
       <ul class="following__list">
         <li
           class="following__item"
@@ -31,10 +30,14 @@
   </div>
 </template>
 
+<!-- Using Composition API -->
+
 <script>
-import { mapActions, mapState } from 'vuex'
+// import { mapActions, mapState } from 'vuex'
 import spinnerComp from '../../components/spinner/spinnerComp.vue'
 import subscriptionComp from '../../components/subscription/subscription.vue'
+import { useStore } from 'vuex'
+import { ref, computed } from 'vue'
 
 export default {
   name: 'followingComp',
@@ -42,34 +45,61 @@ export default {
     spinnerComp,
     subscriptionComp
   },
-  data () {
-    return {
-      loading: false,
-      error: null
+  setup () {
+    const loading = ref(false)
+    const error = ref(null)
+
+    const { dispatch, state } = useStore()
+
+    dispatch('starred/fetchStarred')
+    dispatch('starred/starRepo')
+    dispatch('starred/unStarRepo')
+
+    const fetchStarred = async () => {
+      loading.value = true
+      try {
+        await dispatch('starred/fetchStarred')
+      } catch (e) {
+        error.value = e.message
+      } finally {
+        loading.value = false
+      }
     }
-  },
-  computed: {
-    ...mapState({
-      starred: (state) => state.starred.data
-    })
-  },
-  methods: {
-    ...mapActions({
-      fetchStarred: 'starred/fetchStarred',
-      starRepo: 'starred/starRepo',
-      unStarRepo: 'starred/unStarRepo'
-    })
-  },
-  async created () {
-    this.loading = true
-    try {
-      await this.fetchStarred()
-    } catch (e) {
-      this.error = e.message
-    } finally {
-      this.loading = false
+    return {
+      loading,
+      error,
+      starred: computed(() => state.starred.data),
+      fetchStarred
     }
   }
+  // data () {
+  //   return {
+  //     loading: false,
+  //     error: null
+  //   }
+  // },
+  // computed: {
+  //   ...mapState({
+  //     starred: (state) => state.starred.data
+  //   })
+  // },
+  // methods: {
+  //   ...mapActions({
+  //     fetchStarred: 'starred/fetchStarred',
+  //     starRepo: 'starred/starRepo',
+  //     unStarRepo: 'starred/unStarRepo'
+  //   })
+  // },
+  // async created () {
+  //   this.loading = true
+  //   try {
+  //     await this.fetchStarred()
+  //   } catch (e) {
+  //     this.error = e.message
+  //   } finally {
+  //     this.loading = false
+  //   }
+  // }
 }
 </script>
 

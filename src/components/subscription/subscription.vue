@@ -2,17 +2,17 @@
   <div class="subscription">
     <div class="user">
       <profileAvatar
-        :type="type"
         :nickname="username"
         :avatarUrl="avatarUrl"
         :size="avatar_m"
       >
       </profileAvatar>
+      <span class="type">{{type}}</span>
     </div>
     <div class="button">
       <buttonComp
         :theme="following ? 'theme_green' : 'theme_grey'"
-        :hoverText="following ? 'Unfollowed' : 'Following'"
+        :hoverText="following ? 'Unfollow' : 'Follow'"
         :size="size_s"
         @click="$emit(following ? 'onUnFollow' : 'onFollow', id)"
       >

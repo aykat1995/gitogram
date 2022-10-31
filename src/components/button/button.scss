@@ -37,8 +37,19 @@
       background: #9E9E9E;
     }
   }
+  &.theme_green {
+    background: #31AE54;
+    color: #fff;
+    &.size_s {
+      &:hover {
+        padding: 8px 24px 7px;
+      }
+    }    
+  }
+
   &.theme_grey {
     background: #9E9E9E;
+    padding: 11px 95px;
     &:hover {
       background: #31AE54;
       color: #fff;
@@ -46,7 +57,7 @@
   }
   &.size_s {
     width: auto;
-    padding: 6px 28px;
+    padding: 10px 20px;
     font-size: 12px;
   }
   &.size_m {

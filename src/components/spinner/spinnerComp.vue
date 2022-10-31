@@ -28,6 +28,7 @@ export default {
     &.white {
       width: 18px;
       height: 18px;
+      margin: 3px;
       border-left: 3px solid #fff;
       border-bottom: 3px solid #fff;
       border-right: 3px solid #fff;

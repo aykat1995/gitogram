@@ -22,6 +22,7 @@ export default {
       isOpened: false
     }
   },
+  emits: ['onToggle'],
   methods: {
     toggle () {
       this.isOpened = !this.isOpened

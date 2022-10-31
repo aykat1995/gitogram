@@ -9,7 +9,6 @@
         <div class="title">Repositories</div>
         <div class="count">{{repos.length}}</div>
       </div>
-<!--          <pre>{{repos}}</pre>-->
       <ul class="repos__list">
         <li
           class="repo__item"
@@ -27,6 +26,8 @@
     </template>
   </div>
 </template>
+
+<!-- Using Composition API -->
 
 <script>
 // import { mapActions, mapState } from 'vuex'

@@ -29,6 +29,11 @@
     &-wrapp {
       display: flex;
       justify-content: center;
+      &:hover {
+        .greyIcon {
+          color: #31AE54;
+        }
+      }
     }
   }
 }
