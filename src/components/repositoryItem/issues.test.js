@@ -5,7 +5,12 @@ describe('issue component', () => {
   // Мок для axios
   jest.mock('axios', () => ({
     get: jest.fn(() => Promise.resolve({
-      data: {}
+      issues: {
+        title: 'Test comment text',
+        user: {
+          login: 'Test user'
+        }
+      }
     }))
   }))
 
