@@ -1,6 +1,6 @@
 <template>
   <router-link class="logo-link" :to="{name: 'home'}">
-    <span :class='["logo", {white: isWhite}]'>{{appName}} /</span>
+    <span :class='["logo", {white: isWhite}, {auth: isAuth}]'>{{appName}} /</span>
   </router-link>
 </template>
 
@@ -12,7 +12,8 @@
       }
     },
     props: {
-      isWhite: Boolean
+      isWhite: Boolean,
+      isAuth: Boolean
     }
 }
 </script>

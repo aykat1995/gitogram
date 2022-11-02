@@ -1,22 +1,14 @@
 <template>
   <top-line>
-      <template #headline>
-        <div class="headline">
-          <router-link class="logo" :to="{name: 'home'}">
-            <logo-comp />
-          </router-link>
-          <profile-tools />
-        </div>
-      </template>
-      <template #content>
-        <ul class="stories">
-          <li class="stories-item" v-for="(trending) in trendings" :key="trending.id">
-            <story-user-item :avatar="trending.owner.avatar_url" :username="trending.owner.login" @onPress="$router.push({ name: 'stories', params: { initialSlide: trending.id}})">
-            </story-user-item>
-          </li>
-        </ul>
-      </template>
-    </top-line>
+    <template #headline>
+      <div class="headline">
+        <router-link class="logo" :to="{name: 'home'}">
+          <logo-comp />
+        </router-link>
+        <profile-tools />
+      </div>
+    </template>
+  </top-line>
   <div class="x-container container">
     <div class="wrapper">
       <div class="user">

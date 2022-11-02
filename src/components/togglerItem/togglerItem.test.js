@@ -1,5 +1,5 @@
-import { shallowMount } from "@vue/test-utils"
-import togglerItem from "./togglerItem.vue"
+import { shallowMount } from '@vue/test-utils'
+import togglerItem from './togglerItem.vue'
 
 describe('toggler component', () => {
   it('изменяет надпись при клике', async () => {

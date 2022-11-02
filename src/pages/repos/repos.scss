@@ -31,3 +31,12 @@
   box-shadow: 0 4px 40px rgba(0, 0, 0, 0.07);
   padding: 0 35px 35px
 }
+
+@media(max-width: 800px) {
+  .repos {
+    padding: 0;
+    &__header {
+      display: none;
+    }
+  }
+}

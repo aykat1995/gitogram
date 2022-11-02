@@ -49,3 +49,16 @@ button {
 .greyIcon {
   color: #586069;
 }
+
+// for iPhone
+@media (max-width: 470px) {
+  body {
+    font-size: 12px;
+  }
+  h1 {
+    font-size: 20px;
+  }
+  .container {
+    max-width: 460px;
+  }
+}

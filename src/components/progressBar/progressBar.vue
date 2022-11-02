@@ -58,14 +58,14 @@ export default {
 <style lang="scss" scoped>
 .progress {
   position: relative;
-  height: 5px;
+  height: 2px;
   border-radius: 1px;
   background: rgba(49, 174, 84, 0.3);
 }
 .indicator {
   position: absolute;
   width: 0;
-  height: 5px;
+  height: 2px;
   border-radius: 1px;
   background: #31AE54;;
 }

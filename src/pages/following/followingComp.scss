@@ -25,3 +25,24 @@
 .following__item {
   margin-bottom: 30px;
 }
+
+@media (max-width: 800px) {
+  .following {
+    padding: 0 100px 0 70px;
+    &__header {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .following {
+    padding: 0 40px 0 10px;
+  }
+}
+
+@media (max-width: 470px) {
+  .following {
+    padding: 0;
+  }
+}

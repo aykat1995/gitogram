@@ -19,3 +19,19 @@
 .icon {
   color: #fff;
 }
+
+@media (max-width: 1200px) {
+  .header-wrapp {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 470px) {
+  .header-wrapp {
+    padding: 0 10px;
+  }
+  .icon-wrapp {
+    width: 16px;
+    height: 16px;
+  }
+}

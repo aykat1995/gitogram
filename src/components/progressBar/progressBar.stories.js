@@ -18,5 +18,5 @@ export const DefaultView = (args) => ({
   data () {
     return { args }
   },
-  template: '<progressBar />'
+  template: '<progressBar @onFinish="args.onFinish"/>'
 })

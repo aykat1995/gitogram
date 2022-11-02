@@ -1,11 +1,25 @@
 .logo {
   font-size: 28px;
   font-weight: 700;
+  letter-spacing: -1px;
   &-link {
     text-decoration: none;
     color: #292929;
   }
   &.white {
     color: #fff
+  }
+}
+
+// for iPhone
+@media (max-width: 470px) {
+  .logo {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 640px) {
+  .auth {
+    font-size: 40px;
   }
 }

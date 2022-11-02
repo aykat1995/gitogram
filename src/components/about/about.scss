@@ -3,12 +3,13 @@
 }
 
 .avatar {
-  width: 86px;
+  width: 90px;
+  height: 90px;
   margin-right: 30px;
 }
 
 .username {
-  margin-right: 20px;
+  text-align: left;
   font-size: 24px;
   font-weight: bold;
 }
@@ -65,5 +66,19 @@
   &.router-link-exact-active {
     text-decoration: none;
     color: #000000;
+  }
+}
+
+@media (max-width: 470px) {
+  .avatar {
+    width: 62px;
+    height: 62px;
+    margin-right: 14px;
+  }
+  .username {
+    font-size: 20px;
+  }
+  .stats-title {
+    font-size: 12px;
   }
 }

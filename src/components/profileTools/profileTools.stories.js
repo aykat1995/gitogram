@@ -1,4 +1,6 @@
 import profileTools from './profileTools.vue'
+import { iconComp } from '../../icons'
+import profileAvatar from '../profileAvatar/profileAvatar.vue'
 
 export default {
   title: 'profileTools',
@@ -9,5 +11,9 @@ export default {
 
 export const DefaultView = () => ({
   components: { profileTools },
-  template: '<profileTools />'
+  subcomponents: {
+    iconComp,
+    profileAvatar
+  },
+  template: '<profileTools/>'
 })

@@ -1,7 +1,7 @@
 .avatar {
   &-img {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     border-radius: 100%;
     transition: all 0.1s;
     -webkit-border-radius: 100%;
@@ -17,4 +17,11 @@
       border-color: transparent;
     }
   }  
+}
+
+@media (max-width: 470px) {
+  .avatar-img {
+    width: 60px;
+    height: 60px;
+  }
 }

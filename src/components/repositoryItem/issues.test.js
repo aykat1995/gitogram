@@ -2,6 +2,13 @@ import { mount } from '@vue/test-utils'
 import repositoryItem from './repositoryItem.vue'
 
 describe('issue component', () => {
+  // Мок для axios
+  jest.mock('axios', () => ({
+    get: jest.fn(() => Promise.resolve({
+      data: {}
+    }))
+  }))
+
   // Tets 1
   it('выполняет эмит события loadContent', async () => {
     const wrapper = mount(repositoryItem)

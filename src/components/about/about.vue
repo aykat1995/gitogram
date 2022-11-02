@@ -13,13 +13,13 @@
           <li class="stats-item">
             <router-link :to="{name: 'repos'}" class="reposts">
               <span class="stats-int">{{repos}}</span>
-              <span class="stats-title">repositories</span>
+              <span class="stats-title">reposts</span>
             </router-link>
           </li>
           <li class="stats-item">
             <router-link :to="{name: 'following'}" class="watchers">
               <span class="stats-int">{{following}}</span>
-              <span class="stats-title">following</span>
+              <span class="stats-title">watchers</span>
             </router-link>
           </li>
         </ul>

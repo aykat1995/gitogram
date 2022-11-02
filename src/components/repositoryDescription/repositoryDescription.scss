@@ -3,4 +3,17 @@
 }
 .reponame {
   text-align: left;
+  margin: 0;
+}
+
+// for iPad
+@media (max-width: 768px) {
+
+}
+
+// for iPhone
+@media (max-width: 470px) {
+  .repodesc {
+    margin: 2 0 11px;
+  }
 }

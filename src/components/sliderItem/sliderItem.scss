@@ -10,13 +10,14 @@
   background-color: #fff;
   position: relative;
   &.active {
-    margin-right: 50px;
-    margin-left: 50px;
+    margin-right: 16px;
+    margin-left: 16px;
     transform: scale(1.2);
     -webkit-transform: scale(1.2);
     -moz-transform: scale(1.2);
     -ms-transform: scale(1.2);
     -o-transform: scale(1.2);
+    z-index: 19;
 }
 }
 .slider-item {
@@ -104,4 +105,26 @@
   justify-content: center;
   align-items: center;
   height: 50%;
+}
+
+// for iPad
+@media (max-width: 570px) {
+}
+
+//for iPhone
+@media (max-width: 470px) {
+  .arrow-button {
+    &-left {
+      left: -8%;
+    }
+    &-right {
+      right: -8%;
+    }
+  }
+  .wrapp {
+    &.active {
+      margin-right: 7px;
+      margin-left: 7px;
+    }
+  }
 }

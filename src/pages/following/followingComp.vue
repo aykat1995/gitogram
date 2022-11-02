@@ -5,7 +5,7 @@
     </div>
     <div class="error" v-else-if="error">{{error}}</div>
     <template v-else>
-      <div class="c-following__header">
+      <div class="following__header">
         <div class="title">Following</div>
         <div class="count">{{starred.length}}</div>
       </div>

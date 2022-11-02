@@ -13,3 +13,30 @@
     }
   }
 }
+
+@media (max-width: 1200px) {
+  .headline {
+    padding-right: 35px;
+  }
+}
+
+@media (max-width: 800px) {
+  .topline {
+    border-bottom: 1px solid #C6C6C8;
+  }
+}
+
+@media (max-width: 768px) {
+  .stories-item {
+    margin-right: 18px;
+  }
+}
+
+@media (max-width: 470px) {
+  .headline {
+    padding-right: 12px;
+  }
+  .stories-item {
+    margin-right: 10px;
+  }
+}

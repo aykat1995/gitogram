@@ -12,3 +12,7 @@ export const DefaultView = () => ({
   components: { logoComp },
   template: '<logoComp />'
 })
+
+DefaultView.story = {
+  name: 'Лого по умолчанию'
+}

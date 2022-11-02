@@ -1,8 +1,8 @@
 <template>
   <div class="auth">
     <div class="auth__top">
-      <logoComp />
-      <div class="auth__content">More than just one repository.
+      <logoComp isAuth/>
+      <div class="auth__content">More than just one repository.<br/>
         This is our digital world.</div>
       <button
         class="auth__btn"
@@ -15,7 +15,12 @@
       </button>
     </div>
     <div class="auth__bottom">
-      <img src="../../assets/comp.png" alt="macbook" class="auth__img">
+      <!-- <img src="../../assets/comp.png" alt="macbook" class="auth__img"> -->
+      <picture>
+        <source srcset="../../assets/comp.png" media="(min-width: 820px)" />
+        <source srcset="../../assets/iPad.png" media="(min-width: 640px)" />
+        <img class="auth__bottom" src="../../assets/iPhone.png" />
+      </picture>
       <div class="copyright">© Gitogram from Loftschool</div>
     </div>
   </div>

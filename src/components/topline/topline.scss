@@ -7,3 +7,24 @@
 .content {
   margin-top: 37px;
 }
+
+@media (max-width: 1200px) {
+  .c-topline {
+    padding: 34px 0 34px 35px;
+  }
+  .content {
+    margin-top: 30px;
+  }
+}
+
+@media(max-width: 800px) {
+  .c-topline {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 470px) {
+  .c-topline {
+    padding: 25px 0 25px 14px;
+  }
+}

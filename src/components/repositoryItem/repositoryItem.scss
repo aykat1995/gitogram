@@ -11,12 +11,47 @@
 }
 .wrapper {
   text-align: left;
-  padding: 25px 50px;
+  padding: 25px 22px;
   background-color: #fff;
+  margin-bottom: 8px;
 }
 .toggler-wrapper {
   margin-top: 15px;
 }
 .comments {
   text-align: left;
+}
+.repodesc {
+  margin: 10px 0 25px;
+}
+.reponame {
+  margin: 0;
+}
+
+// Адаптив
+
+@media (max-width: 1240px) {
+  .repository-item {
+    padding: 25px 150px;
+  }
+}
+
+// for iPad
+@media (max-width: 768px) {
+  .repository-item {
+    padding: 25px 20px;
+  }
+}
+
+// for iPhone
+@media (max-width: 470px) {
+  .repository-item {
+    padding: 25px 16px;
+  }
+  .repodesc {
+    margin-bottom: 11px;
+  }
+  .wrapper {
+    padding: 25px 20px;
+  }
 }
