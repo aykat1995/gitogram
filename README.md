@@ -2,13 +2,16 @@
 
 Использованы следующие технологии: Vue.js, Vue-CLI, VueRouter, Vuex, Storybook, OAuth, Composition API, Jest Tests.
 
-## Как использовать приложение:
+## Как запустить проект:
 
 ```
-1. Скачать папку проекта
-2. Перейти в папку gitogram
-3. npm install
-4. npm run serve
-5. npm run build
+Склонируйте репозиторий и перейдите в папку проекта
+git clone https://github.com/aykat1995/gitogram/master
+
+Установите модули локально
+npm install | yarn install
+
+Запустите сборку проекта. По умолчанию проект откроется на http://localhost:3000/
+npm start | yarn start
 
 ```
