@@ -1,38 +1,16 @@
 <<<<<<< HEAD
-# gitogram
 
-## Project setup
-```
-npm install
-```
+# Веб-приложение на Vue.js, работающее с сервисом GitHub
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Использованы следующие технологии: Vue.js, Vue-CLI, VueRouter, Vuex, Storybook, OAuth, Composition API, Jest Tests.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Как использовать приложение:
 
-### Run your unit tests
 ```
-npm run test:unit
-```
+1. Скачать папку проекта
+2. Перейти в папку gitogram
+3. npm install
+4. npm run serve
+5. npm run build
 
-### Run your end-to-end tests
 ```
-npm run test:e2e
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-=======
-# gitogram
->>>>>>> 09baff1... Initial commit
