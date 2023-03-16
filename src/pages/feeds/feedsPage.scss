@@ -30,6 +30,12 @@
   .stories-item {
     margin-right: 18px;
   }
+  .stories {
+    overflow: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+  }
+  }
 }
 
 @media (max-width: 470px) {
