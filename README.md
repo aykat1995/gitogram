@@ -6,7 +6,7 @@
 
 ```
 Склонируйте репозиторий и перейдите в папку проекта
-git clone https://github.com/aykat1995/gitogram/master
+git clone https://github.com/aykat1995/gitogram/tree/master
 
 Установите модули локально
 npm install | yarn install
