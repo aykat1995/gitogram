@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 # Веб-приложение на Vue.js, работающее с сервисом GitHub
 
 Использованы следующие технологии: Vue.js, Vue-CLI, VueRouter, Vuex, Storybook, OAuth, Composition API, Jest Tests.
